@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=SlotOptionDialog
+comment0.text=\r\n\ SlotOptionDialog\ is\ a\ modal\ dialog\ that\ displays\ a\ list\ of\ options\r\n\ as\ buttons.\ When\ an\ option\ button\ is\ clicked,\ the\ dialog\ closes,\ and\r\n\ the\ selected\ option\ is\ stored.\ A\ "Close"\ button\ is\ also\ included\ to\r\n\ exit\ the\ dialog\ without\ making\ a\ selection.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ SlotOptionDialog.java\r\n\ @description\ A\ dialog\ window\ for\ displaying\ parking\ slot\ management\ options\ to\ the\ user.\r\n
+comment1.params=slot\ options
+comment1.target=SlotOptionDialog(modals.ParkingSlot,\ java.util.List)
+comment1.text=\r\n\ Constructs\ a\ SlotOptionDialog\ with\ the\ provided\ list\ of\ options.\r\n\ If\ the\ options\ list\ is\ null\ or\ empty,\ an\ empty\ list\ is\ used\ instead.\r\n\ \r\n\ @param\ slot\ \ \ \ The\ ParkingSlot\ associated\ with\ the\ dialog.\r\n\ @param\ options\ The\ list\ of\ options\ to\ display\ as\ buttons.\r\n
+comment2.params=
+comment2.target=void\ initComponents()
+comment2.text=\r\n\ Initializes\ the\ components\ of\ the\ dialog,\ including\ the\ option\ buttons\r\n\ and\ a\ title\ label.\ Adds\ a\ "Close"\ button\ for\ exiting\ the\ dialog.\r\n
+comment3.params=slot\ options
+comment3.target=SlotOptionDialog\ showDialog(modals.ParkingSlot,\ java.util.List)
+comment3.text=\r\n\ Displays\ the\ SlotOptionDialog\ as\ a\ modal\ dialog,\ blocking\ input\ to\ other\r\n\ windows.\ This\ method\ is\ static\ and\ can\ be\ used\ to\ show\ the\ dialog\ with\r\n\ the\ provided\ options.\r\n\ \r\n\ @param\ slot\ \ \ \ The\ ParkingSlot\ associated\ with\ the\ dialog.\r\n\ @param\ options\ The\ list\ of\ options\ to\ display\ as\ buttons.\r\n\ @return\ an\ instance\ of\ SlotOptionDialog,\ or\ null\ if\ no\ valid\ options\ are\r\n\ \ \ \ \ \ \ \ \ provided.\r\n
+comment4.params=
+comment4.target=java.util.List\ getOptions()
+comment4.text=\r\n\ Returns\ the\ list\ of\ options\ provided\ to\ the\ dialog.\r\n\ \r\n\ @return\ the\ list\ of\ options.\r\n
+comment5.params=options
+comment5.target=void\ setOptions(java.util.List)
+comment5.text=\r\n\ Sets\ a\ new\ list\ of\ options\ for\ the\ dialog.\r\n\ \r\n\ @param\ options\ the\ list\ of\ options\ to\ set.\r\n
+comment6.params=
+comment6.target=java.lang.String\ getOptionAction()
+comment6.text=\r\n\ Retrieves\ the\ action\ associated\ with\ the\ selected\ option.\r\n\ \r\n\ @return\ The\ action\ associated\ with\ the\ selected\ option.\r\n
+comment7.params=optionAction
+comment7.target=void\ setOptionAction(java.lang.String)
+comment7.text=\r\n\ Sets\ the\ selected\ option's\ action.\r\n\ \r\n\ @param\ optionAction\ The\ action\ associated\ with\ the\ selected\ option.\r\n
+numComments=8

@@ -1,0 +1,96 @@
+<!-- 
+    Name: Arun Ragavendhar
+    Student ID: 104837257
+    Purpose: This page allows the manager to process sold items. Items with non-zero sold quantities are displayed, and the manager can clear sold items.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Sold Items</title>
+    <link rel ='stylesheet' href ='style/style.css'>
+    <style>
+         .button-container {
+            margin:15px;
+            display: flex;           
+            justify-content: flex-start;  
+            gap: 10px;          
+        }
+    </style>
+    <script>
+
+        let mLoginStatus = sessionStorage.getItem("mLoginStatus")
+        
+        if(mLoginStatus === "false" || mLoginStatus == null)
+        {
+            window.location.href = "mlogin.html"
+        }
+
+        function deleteSession() 
+            {
+                sessionStorage.setItem("mLoginStatus","false")
+            }
+
+            // Checking if the user is logged in
+            if (sessionStorage.getItem("mLoginStatus") === "true") {
+            // Pushing a new history state to prevent the default back button action
+            history.pushState(null, null, window.location.href);
+
+            // Adding event listener for back button (popstate event)
+            window.addEventListener('popstate', function (event) {
+                if(event.state === null){
+                // When back button is pressed, navigating to another page
+                window.location.href = "mlogout.php";
+                }
+            });
+
+            }
+
+        // Function to load items with non-zero sold quantities
+        function loadProcessingItems() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("processingItems").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "processing.php", true); // Fetching items from processingItems.php
+            xhttp.send();
+        }
+
+        // Function to process sold items by sending a request to processItems.php
+        function processItems() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("responseMessage").innerHTML = this.responseText;
+                    loadProcessingItems(); // Refreshing the items after processing
+                }
+            };
+            xhttp.open("POST", "processItems.php", true);
+            xhttp.send();
+        }
+        // Initial load of items with sold quantities
+        window.onload = loadProcessingItems;
+        setInterval(loadProcessingItems,1000);
+    </script>
+</head>
+<body>
+    <h3>Process Sold Items</h3>
+    <button type = "button" class ="button" style ="width:20%"><a href="mlogout.php">Logout</a></button>
+    <div class ="button-container">
+        <button type ="button" class ="button" style="width:70%;"><a href ="listing.html"> Add an Item </a></button> &nbsp;&nbsp;&nbsp;
+        <button type ="button" class ="button" style="width:70%;"><a href ="processing.html"> Process Orders </a></button>
+        <br>
+    </div>
+
+    <!-- Displaying items to be processed -->
+    <div id="processingItems"></div> <br>
+     <!-- Message area for AJAX response -->
+     <div id="responseMessage"></div>
+    <br>
+    <!-- Button to process sold items -->
+    <button type = "button" class ="button" style ="width:35%" onclick="processItems()">Process Items</button>
+    <br>
+</body>
+</html>

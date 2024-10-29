@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=UnParkCarButton
+comment0.text=\r\n\ Represents\ a\ button\ for\ unparking\ a\ car\ from\ a\ parking\ slot.\r\n\ This\ button\ prompts\ the\ user\ to\ enter\ a\ car's\ registration\ number\r\n\ and\ removes\ the\ car\ from\ the\ parking\ slot\ if\ found.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ UnParkCarButton.java\r\n\ @description\ Handles\ the\ action\ of\ removing\ a\ car\ from\ a\ parking\ slot\ and\ displays\ the\ car's\ parking\ duration\ and\ fee.\r\n
+comment1.params=
+comment1.target=UnParkCarButton()
+comment1.text=\r\n\ Constructs\ an\ "UnPark\ Car"\ button\ with\ predefined\ settings.\r\n\ The\ button\ is\ aligned\ to\ the\ center\ and\ sized\ to\ the\ maximum\ width\r\n\ while\ maintaining\ a\ predefined\ height.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Invoked\ when\ the\ button\ is\ clicked.\ This\ method\ prompts\ the\ user\ for\ a\r\n\ car\ registration\ number\ and\ attempts\ to\ remove\ the\ car\ from\ its\ parking\ slot,\r\n\ showing\ the\ total\ duration\ and\ fee\ the\ car\ was\ parked\ for.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ the\ button\ click.\r\n
+numComments=3

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Car
+comment0.text=\r\n\ Represents\ a\ car\ with\ an\ owner,\ registration\ number,\ and\ staff\ status.\r\n\ The\ car\ object\ stores\ information\ about\ its\ owner\ and\ whether\ the\ owner\ is\ a\ staff\ member.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ Car.java\r\n\ @description\ Class\ representing\ a\ car\ with\ associated\ details\ such\ as\ registration\ number,\ owner's\ name,\ and\ staff\ membership\ status.\r\n
+comment1.params=ownerName\ regNo\ isStaffMember
+comment1.target=Car(java.lang.String,\ java.lang.String,\ boolean)
+comment1.text=\r\n\ Constructs\ a\ Car\ with\ the\ specified\ registration\ number,\ owner's\ name,\ and\ staff\ status.\r\n\r\n\ @param\ regNo\ \ \ \ \ \ \ \ \ The\ registration\ number\ of\ the\ car.\r\n\ @param\ ownerName\ \ \ \ \ The\ name\ of\ the\ car's\ owner.\r\n\ @param\ isStaffMember\ True\ if\ the\ owner\ is\ a\ staff\ member,\ false\ otherwise.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getRegNo()
+comment2.text=\r\n\ Retrieves\ the\ registration\ number\ of\ the\ car.\r\n\r\n\ @return\ The\ registration\ number.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getOwnerName()
+comment3.text=\r\n\ Retrieves\ the\ owner's\ name\ of\ the\ car.\r\n\r\n\ @return\ The\ owner's\ name.\r\n
+comment4.params=
+comment4.target=boolean\ isStaffMember()
+comment4.text=\r\n\ Checks\ if\ the\ owner\ is\ a\ staff\ member.\r\n\r\n\ @return\ True\ if\ the\ owner\ is\ a\ staff\ member,\ false\ otherwise.\r\n
+numComments=5

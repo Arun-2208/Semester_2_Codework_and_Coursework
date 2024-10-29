@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=FindCarButton
+comment0.text=\r\n\ Represents\ a\ button\ that\ finds\ a\ parked\ car\ in\ the\ system\ by\ its\ registration\ number.\r\n\ When\ clicked,\ it\ prompts\ the\ user\ for\ a\ car\ registration\ number\ and\ displays\ information\ about\ the\ car's\ parking\ details.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ FindCarButton.java\r\n\ @description\ Button\ to\ find\ and\ display\ the\ details\ of\ a\ parked\ car.\r\n
+comment1.params=
+comment1.target=FindCarButton()
+comment1.text=\r\n\ Constructs\ the\ "Find\ A\ Car"\ button\ with\ predefined\ settings\ such\ as\ alignment\ and\ size.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Handles\ the\ action\ of\ finding\ a\ parked\ car\ by\ its\ registration\ number.\r\n\ This\ method\ prompts\ the\ user\ to\ enter\ a\ car\ registration\ number\ and\ displays\ the\ parking\ details\ if\ the\ car\ is\ found.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ clicking\ the\ button.\r\n
+numComments=3

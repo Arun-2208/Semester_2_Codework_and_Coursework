@@ -1,0 +1,81 @@
+<!-- 
+    Author Name: Arun Ragavendhar 
+    Student ID: 104837257 
+    Purpose: This page allows new customers to register into the system by providing their personal details. 
+             It sends data to register.php for processing via AJAX.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Registration</title>
+    <link rel = "stylesheet" href = "style/style.css">
+</head>
+<body>
+    <h1>Customer Registration</h1>
+    
+    <fieldset>
+        <!--
+            Input fields to take user inputs for Customer Registration
+        -->
+        <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <br><br>
+        
+        <label for="firstName">First Name:</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="firstName" name="firstName" required pattern="[a-zA-Z ]+"><br><br>
+        
+        <label for="lastName">Last Name:</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="lastName" name="lastName" required pattern="[a-zA-Z ]+"><br><br>
+        
+        <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="retypePassword">Retype Password:</label>&nbsp;&nbsp;&nbsp;
+        <input type="password" id="retypePassword" name="retypePassword" required><br><br>
+        
+        <label for="phone">Phone:</label>&nbsp;&nbsp;&nbsp;
+        <input type="tel" id="phone" name="phone" pattern="0\d{1} \d{8}|0\d{9}" required><br><br>
+        
+        <input type="button" value="Register" class = "button" onclick="submitForm()">
+
+        <!-- Message area -->
+        <div id="responseMessage"></div>
+        <br><br>
+        <!-- Back to home page link -->
+        <button type="button" class = "button"><a href="buyonline.html">Back to Home</a></button>
+    </fieldset>
+
+    <!-- AJAX Script for form submission -->
+    <script>
+        function submitForm() {
+            // Collecting form data
+            var email = document.getElementById("email").value;
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var password = document.getElementById("password").value;
+            var retypePassword = document.getElementById("retypePassword").value;
+            var phone = document.getElementById("phone").value;
+
+            // Creating XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Defining what happens on successful data submission
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("responseMessage").innerHTML = this.responseText;
+                }
+            };
+
+            // Opening the connection
+            xhttp.open("POST", "register.php", true);
+
+            // Setting the request header for form data
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Sending form data
+            xhttp.send("email=" + email + "&firstName=" + firstName + "&lastName=" + lastName + "&password=" + password + "&retypePassword=" + retypePassword + "&phone=" + phone);
+        }
+    </script>
+</body>
+</html>

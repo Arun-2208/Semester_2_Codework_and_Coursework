@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ParkingSlotButton
+comment0.text=\r\n\ ParkingSlotButton\ is\ a\ custom\ JButton\ representing\ a\ parking\ slot\ in\ the\ system.\ \r\n\ The\ button\ displays\ the\ slot's\ ID\ and\ changes\ its\ border\ color\ based\ on\ whether\ \r\n\ the\ slot\ is\ designated\ for\ staff\ or\ general\ use.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ ParkingSlotButton.java\r\n\ @description\ Button\ to\ represent\ and\ interact\ with\ parking\ slots\ in\ the\ system.\r\n
+comment1.params=parkingSlot\ buttonHeight
+comment1.target=ParkingSlotButton(modals.ParkingSlot,\ int)
+comment1.text=\r\n\ Constructs\ a\ ParkingSlotButton\ with\ the\ provided\ parking\ slot\ and\ button\ height.\r\n\ The\ button's\ text\ is\ set\ to\ the\ slot\ ID,\ and\ its\ border\ color\ is\ determined\ by\ \r\n\ whether\ the\ parking\ slot\ is\ for\ staff\ (green)\ or\ visitor\ (yellow).\r\n\ \r\n\ @param\ parkingSlot\ \ The\ parking\ slot\ associated\ with\ this\ button.\r\n\ @param\ buttonHeight\ The\ height\ of\ the\ button\ in\ pixels.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Handles\ button\ click\ events.\ Opens\ a\ dialog\ allowing\ the\ user\ to\ park/unpark\r\n\ cars\ or\ remove\ the\ slot\ if\ unoccupied.\r\n\r\n\ @param\ e\ The\ action\ event\ triggered\ by\ a\ click\ on\ the\ button.\r\n
+comment3.params=
+comment3.target=modals.ParkingSlot\ getParkingSlot()
+comment3.text=\r\n\ Retrieves\ the\ parking\ slot\ associated\ with\ this\ button.\r\n\ \r\n\ @return\ The\ ParkingSlot\ object.\r\n
+comment4.params=parkingSlot
+comment4.target=void\ setParkingSlot(modals.ParkingSlot)
+comment4.text=\r\n\ Sets\ a\ new\ parking\ slot\ for\ this\ button\ and\ updates\ its\ appearance\ accordingly.\r\n\ \r\n\ @param\ parkingSlot\ The\ new\ ParkingSlot\ to\ associate\ with\ this\ button.\r\n
+numComments=5

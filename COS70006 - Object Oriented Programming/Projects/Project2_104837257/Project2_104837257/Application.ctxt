@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Application
+comment0.text=\r\n\ Application\ is\ the\ main\ application\ class\ for\ the\ Swinburne\ Parking\ System.\r\n\ It\ initializes\ and\ displays\ a\ GUI\ window\ with\ parking\ slot\ controls,\r\n\ a\ grid\ of\ parking\ slots,\ and\ a\ title\ header.\ Staff\ and\ visitor\ parking\r\n\ slots\ are\ dynamically\ generated\ upon\ initialization.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ Application.java\r\n\ @description\ Main\ application\ class\ for\ the\ parking\ system,\ responsible\ for\ managing\ the\ UI\ and\ initialization.\r\n
+comment1.params=
+comment1.target=Application()
+comment1.text=\r\n\ Constructs\ the\ Application\ by\ initializing\ staff\ and\ visitor\ parking\ slots\r\n\ and\ setting\ up\ the\ main\ application\ window.\r\n
+comment2.params=
+comment2.target=void\ initComponents()
+comment2.text=\r\n\ Initializes\ the\ components\ of\ the\ main\ frame,\ including\ the\ title\ panel,\r\n\ the\ slot\ grid\ panel,\ and\ the\ control\ panel.\r\n
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ The\ main\ method\ to\ run\ the\ Application.\ It\ invokes\ the\ Swing\ UI\ thread\ and\r\n\ makes\ the\ application\ visible.\r\n\ \r\n\ @param\ args\ the\ command-line\ arguments\ (not\ used)\r\n
+comment4.params=
+comment4.target=void\ run()
+numComments=5

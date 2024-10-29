@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ExitProgramButton
+comment0.text=\r\n\ Represents\ a\ button\ that\ exits\ the\ program.\r\n\ When\ clicked,\ the\ button\ terminates\ the\ application.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @Date\ -\ 16/10/2024\r\n\ @file\ ExitProgramButton.java\r\n\ @description\ Button\ to\ exit\ the\ parking\ lot\ program.\r\n
+comment1.params=
+comment1.target=ExitProgramButton()
+comment1.text=\r\n\ Constructs\ the\ "Exit"\ button\ with\ predefined\ settings\ such\ as\ alignment\ and\ size.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Exits\ the\ program\ when\ the\ button\ is\ clicked.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ clicking\ the\ button.\r\n
+numComments=3

@@ -1,0 +1,185 @@
+Arun's Car Parking System
+
+Project Structure and Detailed Components Overview
+1. Application.java
+
+    Description:
+    The main entry point of the application. It initializes the graphical user interface (GUI), creates parking slots, and sets up the control panels.
+
+    GUI Components Used:
+        JFrame: The main application window that serves as the container for all other components.
+        JPanel: Used to organize different parts of the interface such as the title, control panel, and slot grid.
+        JLabel: Displays the title of the application at the top.
+        BorderLayout: Used to structure the layout into different sections (north, center, east).
+
+    Event Handling:
+        ActionListener: Action events are handled when buttons like ExitProgramButton, ParkCarButton, UnParkCarButton, etc., are clicked. This is invoked within the control panel or slot button classes.
+
+    Key Responsibilities:
+        Creates and configures the main application window.
+        Uses SetupDialog to prompt users for the number of parking slots.
+        Displays parking slots using SlotGridPanel and control buttons using ControlPanel.
+
+2. Control Panels
+
+These classes define the panels used to organize components in the GUI:
+ControlPanel.java
+
+    Description:
+    Displays buttons that allow users to manage parking slots (e.g., adding/removing slots), find cars, park or unpark cars, and more.
+
+    GUI Components Used:
+        JPanel: Serves as the container for all control buttons.
+        JButton: Buttons that users can click to perform specific actions like adding or removing slots, finding cars, and exiting the program.
+        BoxLayout: Manages the vertical alignment of buttons in the control panel.
+
+    Event Handling:
+        ActionListener: Each button in the control panel (e.g., AddSlotButton, RemoveSlotButton, FindCarButton) listens for click events. When clicked, an associated action is triggered, such as adding a new parking slot or finding a car.
+
+SlotGridPanel.java
+
+    Description:
+    Displays the parking slots in a scrollable grid. Each slot is represented as a button, with different colors to distinguish between staff, visitor, and occupied slots.
+
+    GUI Components Used:
+        JPanel: Organizes parking slot buttons in a grid format.
+        JButton: Each parking slot is represented by a button, which displays the slot ID and its occupancy status.
+        GridLayout: Manages the layout of the parking slots in a grid format.
+        JScrollPane: Adds scrollable functionality to the slot grid for easy navigation when the number of slots exceeds the visible area.
+
+    Event Handling:
+        ChangeListener: Listens for changes in the list of parking slots (such as when a car is parked or unparked). When a change occurs, the panel is refreshed, and the buttons are updated.
+        ActionListener: Each slot button can trigger actions like parking or unparking a car. These are handled in the corresponding classes for the buttons (e.g., ParkCarButton, UnParkCarButton).
+
+3. gui_buttons
+
+These classes define the buttons used in the control panel. Each button is responsible for triggering a specific action in the system.
+AddSlotButton.java
+
+    Description:
+    Adds a new parking slot (either for staff or visitors).
+
+    GUI Components Used:
+        JButton: Used to represent the button for adding a slot.
+
+    Event Handling:
+        ActionListener: When clicked, the button prompts the user for a slot ID and whether it is a staff or visitor slot. This action is handled by invoking methods in the ParkingManager to add a new slot.
+
+DeleteUnoccupiedSlotBtn.java
+
+    Description:
+    Deletes all unoccupied parking slots from the system.
+
+    GUI Components Used:
+        JButton: Used to represent the button for deleting unoccupied slots.
+
+    Event Handling:
+        ActionListener: When clicked, the button deletes all unoccupied slots by calling a method in the ParkingManager class, and displays a confirmation message showing the number of slots deleted.
+
+ExitProgramButton.java
+
+    Description:
+    Exits the application.
+
+    GUI Components Used:
+        JButton: Used to represent the button for exiting the program.
+
+    Event Handling:
+        ActionListener: When clicked, the program is terminated by calling System.exit(0).
+
+FindCarButton.java
+
+    Description:
+    Finds a car based on its registration number.
+
+    GUI Components Used:
+        JButton: Used to represent the button for finding a car.
+
+    Event Handling:
+        ActionListener: When clicked, this button prompts the user to enter the car registration number. It then searches for the car using the ParkingManager and displays its slot and parking duration if found.
+
+ParkCarButton.java
+
+    Description:
+    Parks a car in a specified slot.
+
+    GUI Components Used:
+        JButton: Used to represent the button for parking a car.
+
+    Event Handling:
+        ActionListener: When clicked, this button prompts the user to enter the car’s details (registration, owner’s name, and whether they are staff or visitor). It then parks the car by calling the ParkingManager's parkCar() method.
+
+UnParkCarButton.java
+
+    Description:
+    Unparks a car from a slot and calculates the parking fee.
+
+    GUI Components Used:
+        JButton: Used to represent the button for unparking a car.
+
+    Event Handling:
+        ActionListener: When clicked, this button prompts the user for the car registration number and removes the car from the corresponding parking slot. It also calculates and displays the parking fee and duration.
+
+RefreshButton.java
+
+    Description:
+    Refreshes the display of the parking slots.
+
+    GUI Components Used:
+        JButton: Used to represent the button for refreshing the display.
+
+    Event Handling:
+        ActionListener: When clicked, the button triggers the AppState to notify all listeners to refresh the display of parking slots.
+
+RemoveSlotButton.java
+
+    Description:
+    Removes a parking slot if it is unoccupied.
+
+    GUI Components Used:
+        JButton: Used to represent the button for removing a slot.
+
+    Event Handling:
+        ActionListener: When clicked, the button prompts the user for a slot ID and attempts to remove the slot if it is unoccupied.
+
+4. Dialogbox
+SetupDialog.java
+
+    Description:
+    Prompts the user to input the number of staff and visitor parking slots when the application starts.
+
+    GUI Components Used:
+        JDialog: A modal dialog that blocks user input to the main window while it is open.
+        JTextField: Used to collect the number of staff and visitor slots.
+        JButton: Buttons to either submit the number of slots or close the dialog.
+
+    Event Handling:
+        ActionListener: The dialog uses buttons to either submit the inputted number of slots or close the dialog. If invalid input is provided, the user is prompted with error messages.
+
+5. Models
+Car.java
+
+    Description:
+    Represents a car with attributes such as the owner’s name, registration number, and staff/visitor status.
+
+ParkingSlot.java
+
+    Description:
+    Represents a parking slot, with properties such as the slot ID, whether it’s occupied, the parked car, and the duration of parking.
+
+6. Utilities
+AppState.java
+
+    Description:
+    Holds the shared state of the application, including the list of parking slots and constants for UI layout.
+
+ParkingManager.java
+
+    Description:
+    Handles parking operations such as parking/unparking cars, validating slot IDs, and calculating parking fees.
+
+ObservableList.java
+
+    Description:
+    A custom list class that notifies listeners whenever the list changes, allowing UI components to refresh automatically.
+

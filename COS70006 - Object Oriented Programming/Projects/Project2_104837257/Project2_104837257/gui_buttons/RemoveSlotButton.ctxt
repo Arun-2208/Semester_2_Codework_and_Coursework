@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=RemoveSlotButton
+comment0.text=\r\n\ Button\ to\ remove\ a\ parking\ slot\ by\ asking\ the\ user\ for\ a\ Slot\ ID.\r\n\ When\ clicked,\ the\ button\ prompts\ the\ user\ to\ enter\ the\ ID\ of\ the\ parking\ slot\ to\ remove,\r\n\ and\ attempts\ to\ delete\ it\ from\ the\ parking\ lot\ system.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ RemoveSlotButton.java\r\n\ @description\ Button\ to\ remove\ a\ parking\ slot\ by\ prompting\ for\ a\ slot\ ID.\r\n
+comment1.params=
+comment1.target=RemoveSlotButton()
+comment1.text=\r\n\ Constructs\ the\ "Remove\ Slot"\ button\ with\ predefined\ settings\ such\ as\ alignment\ and\ size.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Handles\ the\ action\ of\ removing\ a\ parking\ slot\ by\ prompting\ for\ a\ slot\ ID.\r\n\ If\ the\ slot\ is\ found\ and\ can\ be\ removed,\ it\ deletes\ the\ slot\ from\ the\ system\ and\ shows\ a\ success\ message.\r\n\ Otherwise,\ it\ shows\ an\ error\ message.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ clicking\ the\ button.\r\n
+numComments=3

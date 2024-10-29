@@ -1,0 +1,156 @@
+<!-- 
+    Name: Arun Ragavendhar
+    Student ID: 104837257
+    Purpose: This page allows store managers to add new items to the system with details such as item name, price, quantity, and description. AJAX is used to submit the form data.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item Listing</title>
+    <link rel ="stylesheet" href="style/style.css">
+    <style>
+        body{
+            margin-top:15px;
+        }
+        .button-container {
+            margin:15px;
+            display: flex;           
+            justify-content: flex-start;  
+            gap: 10px;          
+        }
+        .button-container2 {
+            display: flex;           
+            justify-content: flex-start;  
+            gap: 10px;          
+        }
+        .error-message {
+            width:80%;
+        }
+        .success-message {
+            width:60%;
+        }
+        .button {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #ffd500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button type='button' class ='button' style="width:10%;"><a href ='mlogout.php' onclick="deleteSession()"> Log out</a></button>
+
+    <!---Navigation buttons to go to listing page to add items or to go to processing page to process orders-->
+
+    <div class ="button-container">
+    <button type ="button" class ="button" style="width:70%;"><a href ="listing.html"> Add an Item </a></button> &nbsp;&nbsp;&nbsp;
+    <button type ="button" class ="button" style="width:70%;"><a href ="processing.html"> Process Orders </a></button>
+    <br>
+    </div>
+   
+    <h3>Add New Item</h3>
+    <fieldset>
+
+         <!---Fieldset input fields to add an Item to the Item Catalogue-->
+
+        <label for="itemName">Item Name:</label><br>
+        <input type="text" id="itemName" name="itemName" required><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="text" id="price" name="price" required><br><br>
+
+        <label for="quantity">Quantity Available:</label><br>
+        <input type="text" id="quantity" name="quantity" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <!---Buttons to add the item or resest the fields-->
+        <div class ="button-container2">
+        <button type="button" class ="button" value="Add Item" onclick="submitItem()"> Add an item </button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class ="button" value="Reset" onclick ="resetData()"> Reset </button> 
+        </div>
+        
+    </fieldset>
+
+       <!-- Message area for AJAX response -->
+       <div id="responseMessage"></div>
+
+
+    <!-- AJAX script to handle the item addition -->
+    <script>
+   
+        let mLoginStatus = sessionStorage.getItem("mLoginStatus")
+        
+        if(mLoginStatus === "false" || mLoginStatus == null)
+        {
+            window.location.href = "mlogin.html"
+        }
+
+        function deleteSession() 
+            {
+                sessionStorage.setItem("mLoginStatus","false")
+            }
+
+                // Check if the user is logged in
+            if (sessionStorage.getItem("mLoginStatus") === "true") {
+            // Push a new history state to prevent the default back button action
+            history.pushState(null, null, window.location.href);
+
+            // Add event listener for back button (popstate event)
+            window.addEventListener('popstate', function (event) {
+                if(event.state === null){
+                // When back button is pressed, navigate to another page
+                window.location.href = "mlogout.php"; // Specify the page to navigate to
+                }
+            });
+
+            }
+             
+        // Function to reset the form data    
+        function resetData(){
+            document.getElementById("itemName").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("quantity").value = "";
+            document.getElementById("description").value = "";
+
+        }
+
+        function submitItem() {
+            // Getting form data
+            var itemName = document.getElementById("itemName").value;
+            var price = document.getElementById("price").value;
+            var quantity = document.getElementById("quantity").value;
+            var description = document.getElementById("description").value;
+
+            // Creating XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Defining the behavior for when the response is received
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("responseMessage").innerHTML = this.responseText;
+                }
+            };
+
+            // Opening the connection to the PHP file
+            xhttp.open("POST", "listing.php", true);
+
+            // Setting the request header to handle form data
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Sending the form data
+            xhttp.send("itemName=" + itemName + "&price=" + price + "&quantity=" + quantity + "&description=" + description);
+        }
+    </script>
+</body>
+</html>

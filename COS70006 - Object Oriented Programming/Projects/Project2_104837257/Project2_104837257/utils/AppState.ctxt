@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=AppState
+comment0.text=\r\n\ AppState\ is\ a\ utility\ class\ that\ stores\ shared\ application\ state,\ such\ as\ the\r\n\ list\ of\ parking\ slots\ and\ the\ height\ for\ control\ buttons.\ It\ provides\ methods\r\n\ to\ initialize\ parking\ slots\ for\ staff\ and\ visitors.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ \ -\ 16/10/2024\r\n\ @file\ AppState.java\r\n\ @description\ Shared\ application\ state\ for\ managing\ parking\ slots\ and\ UI\ controls.\r\n
+comment1.params=numberOfStaffSlots\ numberOfVisitorSlots
+comment1.target=void\ initializeParkingSlots(int,\ int)
+comment1.text=\r\n\ Initializes\ the\ parking\ slots\ for\ staff\ and\ visitors.\r\n\ This\ method\ populates\ the\ parkingSlots\ list\ with\ a\ specified\ number\ of\ staff\ and\ visitor\ slots.\r\n\ \r\n\ @param\ numberOfStaffSlots\ \ \ the\ number\ of\ staff\ parking\ slots\ to\ initialize\r\n\ @param\ numberOfVisitorSlots\ the\ number\ of\ visitor\ parking\ slots\ to\ initialize\r\n
+numComments=2

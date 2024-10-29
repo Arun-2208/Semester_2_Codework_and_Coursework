@@ -1,0 +1,73 @@
+<!-- 
+    Name: Arun Ragavendhar
+    Student ID: 104837257
+    Purpose: This page allows customers to log into the BuyOnline system via AJAX, and the credentials are validated against customer.xml.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Login</title>
+    <link rel ="stylesheet" href ="style/style.css">
+</head>
+<body>
+    <h1>Customer Login</h1>
+    <fieldset>
+
+        <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="button" class ="button" value="Login" onclick="submitLogin()">
+        
+        <!-- Message area -->
+        <div id="responseMessage"></div>
+    
+    <br><br>
+    <button type="button" class ="button"><a href="buyonline.html">Back to Home</a></button>
+    </fieldset>
+
+    <!-- AJAX Script for login form submission -->
+    <script>
+        function submitLogin() {
+            // Collecting login data
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Creating XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Defining what happens on successful data submission
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("responseMessage").innerHTML = this.responseText;
+
+                    // Redirecting to buying page after successful login
+                    if (this.responseText.includes("Login successful")) {
+
+                        sessionStorage.setItem("loginStatus","true");
+                        setTimeout(function() {
+                            window.location.href = "buying.html";
+                        }, 1500);
+                    }
+                    else{
+                        sessionStorage.setItem("loginStatus","false");
+                    }
+                }
+            };
+
+            // Opening the connection
+            xhttp.open("POST", "login.php", true);
+
+            // Setting the request header for form data
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Sending login data
+            xhttp.send("email=" + email + "&password=" + password);
+        }
+    </script>
+</body>
+</html>

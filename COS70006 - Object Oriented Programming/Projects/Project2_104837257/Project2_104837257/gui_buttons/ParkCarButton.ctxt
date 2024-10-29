@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ParkCarButton
+comment0.text=\r\n\ ParkCarButton\ is\ a\ JButton\ that,\ when\ clicked,\ triggers\ the\ car\ parking\r\n\ process.\r\n\ This\ button\ is\ intended\ to\ allow\ users\ to\ park\ a\ car\ in\ an\ available\ parking\r\n\ slot.\r\n\ It\ is\ styled\ with\ predefined\ settings\ such\ as\ size\ and\ alignment.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\r\n\ @version\ 1.0.0\r\n\ @since\ 16/10/2024\r\n
+comment1.params=
+comment1.target=ParkCarButton()
+comment1.text=\r\n\ Constructs\ a\ "Park\ Car"\ button\ with\ predefined\ settings.\r\n\ The\ button\ is\ aligned\ to\ the\ center\ and\ sized\ to\ the\ maximum\ width\r\n\ while\ maintaining\ a\ predefined\ height.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ This\ method\ is\ triggered\ when\ the\ "Park\ Car"\ button\ is\ clicked.\r\n\ It\ prompts\ the\ user\ for\ a\ slot\ ID,\ checks\ if\ the\ slot\ is\ occupied,\ \r\n\ and\ then\ proceeds\ with\ parking\ the\ car\ if\ the\ slot\ is\ available.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ the\ button\ click.\r\n
+numComments=3

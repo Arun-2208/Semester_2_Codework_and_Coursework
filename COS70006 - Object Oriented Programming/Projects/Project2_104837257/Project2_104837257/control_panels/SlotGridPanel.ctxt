@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=SlotGridPanel
+comment0.text=\r\n\ SlotGridPanel\ is\ a\ custom\ JPanel\ that\ displays\ a\ grid\ of\ parking\ slots,\r\n\ represented\ as\ buttons.\ The\ layout\ dynamically\ updates\ whenever\ the\ underlying\r\n\ parkingSlots\ list\ changes.\ It\ also\ provides\ a\ scrollable\ view\ of\ the\ grid,\r\n\ which\ adapts\ to\ the\ available\ frame\ size.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ SlotGridPanel.java\r\n\ @description\ A\ grid\ panel\ for\ displaying\ parking\ slots,\ with\ automatic\ layout\ updates\ and\ scrollable\ view.\r\n
+comment1.params=parkingSlots\ frameWidth
+comment1.target=SlotGridPanel(utils.ObservableList,\ int)
+comment1.text=\r\n\ Constructs\ a\ SlotGridPanel\ with\ a\ specified\ list\ of\ parking\ slots\ and\ frame\r\n\ width.\ The\ grid\ layout\ is\ initialized\ with\ the\ number\ of\ columns\ and\ spacing,\r\n\ and\ a\ change\ listener\ is\ added\ to\ refresh\ the\ panel\ when\ the\ list\ of\ parking\r\n\ slots\ changes.\r\n\ \r\n\ @param\ parkingSlots\ the\ observable\ list\ of\ ParkingSlot\ objects\ to\ display.\r\n\ @param\ frameWidth\ \ \ the\ width\ of\ the\ frame,\ used\ to\ determine\ panel\ layout\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ and\ size.\r\n
+comment2.params=
+comment2.target=void\ refreshPanel()
+comment2.text=\r\n\ Refreshes\ the\ panel\ by\ clearing\ existing\ buttons\ and\ re-adding\ buttons\ for\r\n\ each\ parking\ slot.\ Each\ button\ represents\ a\ parking\ slot,\ with\ its\ background\r\n\ color\ and\ border\ determined\ by\ whether\ it\ is\ a\ staff\ slot.\r\n
+comment3.params=
+comment3.target=javax.swing.JScrollPane\ getScrollPane()
+comment3.text=\r\n\ Returns\ a\ scrollable\ view\ (JScrollPane)\ of\ this\ panel.\ The\ scroll\ pane\ allows\r\n\ the\ user\ to\ navigate\ through\ the\ grid\ if\ the\ panel\ exceeds\ the\ viewable\ area.\r\n\ \r\n\ @return\ a\ JScrollPane\ containing\ this\ panel,\ with\ scroll\ bars\ set\ as\ needed.\r\n
+numComments=4

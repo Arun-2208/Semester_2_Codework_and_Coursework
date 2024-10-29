@@ -1,0 +1,74 @@
+<!-- 
+    Name: Arun Ragavendhar
+    Student ID: 104837257
+    Purpose: This page allows store managers to log into the system by providing their manager ID and password. The credentials are checked against manager.txt via AJAX.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Login</title>
+    <link rel ='stylesheet' href ='style/style.css'>
+</head>
+<body>
+    <h1>Manager Login</h1>
+    <fieldset>
+        <!--Input fields for manager login-->
+        <label for="managerId">Manager ID:</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="managerId" name="managerId" required> &nbsp;&nbsp;&nbsp;&nbsp; <span> ID : AR99 </span><br><br>
+
+        <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;
+        <input type="password" id="password" name="password" required>&nbsp;&nbsp;&nbsp;&nbsp; <span>Password : ARR121280 </span><br><br>
+
+        <input type="button" class = "button" value="Login" onclick="submitLogin()">
+        
+        <!-- Message area for AJAX response -->
+        <div id="responseMessage"></div>
+
+        <br><br>
+        <button type="button" class ="button"><a href="buyonline.html">Back to Home</a></button>
+    </fieldset>
+
+    <!-- AJAX script to handle the login -->
+    <script>
+        function submitLogin() {
+            // Collecting manager login data
+            var managerId = document.getElementById("managerId").value;
+            var password = document.getElementById("password").value;
+
+            // Creating XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Defining what happens on successful data submission
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("responseMessage").innerHTML = this.responseText;
+
+                    // Redirecting to the manager's page after successful login
+                    if (this.responseText.includes("Login successful")) {
+
+                        sessionStorage.setItem("mLoginStatus","true");
+                        setTimeout(function() {
+                            window.location.href = "listing.html";
+                        }, 1500);
+                    }
+                    else{
+                        sessionStorage.setItem("mLoginStatus","false");
+                    }
+                }
+                
+            };
+
+            // Opening the connection
+            xhttp.open("POST", "mlogin.php", true);
+
+            // Setting the request header for form data
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Sending login data
+            xhttp.send("managerId=" + managerId + "&password=" + password);
+        }
+    </script>
+</body>
+</html>

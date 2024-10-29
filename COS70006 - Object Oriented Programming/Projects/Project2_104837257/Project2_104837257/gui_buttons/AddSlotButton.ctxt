@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=AddSlotButton
+comment0.text=\r\n\ Represents\ a\ button\ that\ adds\ new\ parking\ slots\ to\ the\ system.\r\n\ When\ clicked,\ the\ button\ prompts\ the\ user\ for\ a\ slot\ ID\ and\ staff/visitor\ information,\r\n\ then\ adds\ the\ parking\ slot\ if\ it\ does\ not\ already\ exist.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @Date\ -\ 16/10/2024\ \r\n\ @file\ AddSlotButton.java\r\n\ @description\ Button\ to\ add\ new\ parking\ slots\ to\ the\ system.\r\n
+comment1.params=
+comment1.target=AddSlotButton()
+comment1.text=\r\n\ Constructs\ the\ "Add\ New\ Slot"\ button\ with\ predefined\ settings\r\n\ such\ as\ alignment\ and\ size.\r\n
+comment2.params=slot
+comment2.target=boolean\ addParkingSlot(modals.ParkingSlot)
+comment2.text=\r\n\ Adds\ a\ new\ parking\ slot\ to\ the\ parking\ lot.\ Ensures\ no\ duplicate\ slot\ IDs\r\n\ are\ added\ by\ checking\ for\ existing\ IDs\ in\ the\ list\ of\ parking\ slots.\r\n\r\n\ @param\ slot\ The\ ParkingSlot\ object\ to\ be\ added.\r\n\ @return\ True\ if\ the\ slot\ is\ added\ successfully,\ false\ if\ the\ slot\ ID\ already\r\n\ \ \ \ \ \ \ \ \ exists.\r\n
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.text=\r\n\ Handles\ the\ action\ of\ adding\ a\ new\ parking\ slot.\ Prompts\ the\ user\ for\ a\ slot\ ID\r\n\ and\ whether\ it\ is\ a\ staff\ slot,\ then\ attempts\ to\ add\ it\ to\ the\ parking\ lot.\r\n\r\n\ @param\ e\ The\ action\ event\ triggered\ by\ clicking\ the\ button.\r\n
+numComments=4

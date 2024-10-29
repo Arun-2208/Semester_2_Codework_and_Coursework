@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ControlPanel
+comment0.text=\r\n\ ControlPanel\ is\ a\ JPanel\ that\ contains\ buttons\ to\ manage\ parking\ slots\ in\ the\ system.\r\n\ This\ panel\ includes\ buttons\ to\ add,\ remove,\ find,\ and\ manage\ parking\ slots,\ along\ with\r\n\ options\ to\ refresh\ the\ view\ and\ exit\ the\ program.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ ControlPanel.java\r\n\ @description\ A\ control\ panel\ for\ managing\ parking\ slots\ with\ buttons\ for\ different\ actions.\r\n
+comment1.params=parkingSlots\ panelWidth
+comment1.target=ControlPanel(utils.ObservableList,\ int)
+comment1.text=\r\n\ Constructs\ a\ control\ panel\ that\ contains\ buttons\ for\ adding\ parking\ slots,\r\n\ deleting\ unoccupied\ slots,\ and\ exiting\ the\ program.\r\n\r\n\ @param\ parkingSlots\ The\ list\ of\ parking\ slots\ to\ manage.\r\n\ @param\ panelWidth\ \ \ The\ width\ of\ the\ panel.\r\n
+numComments=2

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DeleteUnoccupiedSlotBtn
+comment0.text=\r\n\ Represents\ a\ button\ that\ deletes\ all\ unoccupied\ parking\ slots\ from\ the\ system.\r\n\ When\ clicked,\ it\ removes\ all\ unoccupied\ slots\ and\ notifies\ the\ user\ about\ the\ number\ of\ slots\ deleted.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\ \r\n\ @date\ -\ 16/10/2024\r\n\ @file\ DeleteUnoccupiedSlotBtn.java\r\n\ @description\ Button\ to\ delete\ unoccupied\ parking\ slots\ from\ the\ parking\ lot\ system.\r\n
+comment1.params=
+comment1.target=DeleteUnoccupiedSlotBtn()
+comment1.text=\r\n\ Constructs\ the\ "Delete\ all\ unoccupied\ parking\ slots"\ button.\r\n\ The\ button\ text\ is\ centered\ and\ the\ button\ is\ sized\ to\ the\ maximum\ width\ while\ maintaining\ a\ predefined\ height.\r\n
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.text=\r\n\ Handles\ the\ action\ of\ deleting\ all\ unoccupied\ slots.\r\n\ This\ method\ invokes\ the\ ParkingManager\ to\ delete\ all\ unoccupied\ slots\ and\r\n\ displays\ a\ confirmation\ dialog\ showing\ the\ number\ of\ slots\ deleted.\r\n\ \r\n\ @param\ e\ The\ action\ event\ triggered\ by\ clicking\ the\ button.\r\n
+numComments=3

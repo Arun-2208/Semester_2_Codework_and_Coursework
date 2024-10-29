@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=SetupDialog
+comment0.text=\r\n\ SetupDialog\ class\ provides\ a\ dialog\ window\ for\ configuring\ the\ number\ of\r\n\ parking\ slots\ for\ staff\ and\ visitors\ in\ a\ parking\ setup.\r\n\ It\ allows\ the\ user\ to\ input\ the\ number\ of\ staff\ and\ visitor\ slots\ and\r\n\ validate\ the\ input.\r\n\ This\ dialog\ blocks\ further\ input\ until\ it\ is\ closed.\r\n\ \r\n\ @author\ Arun\ Ragavendhar\ -\ 104837257\r\n\ @date\ -\ 16/10/2024\r\n\ @file\ SetupDialog.java\r\n\ @description\ A\ modal\ dialog\ for\ setting\ up\ the\ number\ of\ staff\ and\ visitor\ parking\ slots.\r\n
+comment1.params=maxParkingSlot
+comment1.target=SetupDialog(int)
+comment1.text=\r\n\ Constructs\ a\ modal\ dialog\ with\ the\ specified\ title\ and\ initializes\ its\r\n\ components.\ The\ dialog\ is\ set\ to\ a\ fixed\ size\ and\ centered\ on\ the\ screen.\r\n\ \r\n\ @param\ maxParkingSlot\ Maximum\ allowed\ parking\ slots.\r\n
+comment2.params=
+comment2.target=SetupDialog()
+comment2.text=\r\n\ Default\ constructor\ that\ sets\ a\ maximum\ of\ 99\ parking\ slots.\r\n
+comment3.params=
+comment3.target=void\ initComponents()
+comment3.text=\r\n\ Initializes\ the\ components\ of\ the\ dialog,\ including\ text\ fields\ for\ entering\r\n\ the\ number\ of\ staff\ and\ visitor\ slots,\ and\ buttons\ to\ submit\ the\ input\ or\r\n\ close\ the\ dialog.\r\n
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=
+comment5.target=SetupDialog\ showDialog()
+comment5.text=\r\n\ Displays\ the\ SetupDialog\ as\ a\ modal\ dialog,\ blocking\ input\ to\ other\ windows.\r\n\ \r\n\ @return\ an\ instance\ of\ SetupDialog\r\n
+comment6.params=
+comment6.target=java.lang.String\ getDialogTitle()
+comment6.text=\r\n\ Returns\ the\ dialog\ title.\r\n\ \r\n\ @return\ The\ title\ of\ the\ dialog.\r\n
+comment7.params=
+comment7.target=java.lang.Integer\ getNumberOfStaffSlots()
+comment7.text=\r\n\ Returns\ the\ number\ of\ staff\ slots\ entered\ by\ the\ user.\r\n\ \r\n\ @return\ the\ number\ of\ staff\ slots\ as\ an\ Integer.\r\n\ @throws\ NumberFormatException\ if\ the\ input\ is\ not\ a\ valid\ integer.\r\n
+comment8.params=
+comment8.target=java.lang.Integer\ getNumberOfVisitorSlots()
+comment8.text=\r\n\ Returns\ the\ number\ of\ visitor\ slots\ entered\ by\ the\ user.\r\n\ \r\n\ @return\ the\ number\ of\ visitor\ slots\ as\ an\ Integer.\r\n\ @throws\ NumberFormatException\ if\ the\ input\ is\ not\ a\ valid\ integer.\r\n
+numComments=9

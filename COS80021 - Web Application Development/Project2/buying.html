@@ -1,0 +1,203 @@
+<!-- 
+    Name: Arun Ragavendhar
+    Student ID: 104837257
+    Purpose: This page displays available items and a shopping cart. AJAX techniques are used to periodically fetch data from the server.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buying Page</title>
+    <link rel ="stylesheet" href ="style/style.css">
+    <style>
+        fieldset {
+            display: block;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 1100px;
+            width: 100%;
+            margin-bottom: 40px;
+            transition: box-shadow 0.3s;
+        }
+        .button {
+        width: 20%;
+        align-items: center;
+        justify-content: center;
+        }
+        .error-message {
+        color: #dc3545;
+        font-weight: bold;
+        margin: 15px 0;
+        padding: 12px;
+        border: 1px solid #dc3545;
+        background-color: #f8d7da;
+        border-radius: 6px;
+        width :20%;
+        }
+        .success-message {
+            color: #28a745;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 12px;
+            border: 1px solid #28a745;
+            background-color: #d4edda;
+            border-radius: 6px;
+            width :20%;
+        }
+    </style>
+
+</head>
+<body>
+    <fieldset>
+
+    <!---Fielset input fields and logout button displyed to the User-->
+
+    <p><button type='button' class ="button"><a href ='logout.php' onclick="deleteSession()"> Log out</a></button></p>
+    <h3>Available Items</h3>
+
+    <!---HTML div where the Item catalog is to be displayed-->
+
+    <div id="catalog"></div>
+
+    <h3>Shopping Cart</h3>
+
+    <!---HTML div where the shopping cart is to be displayed-->
+
+    <div id="cart"></div> <br><br>
+
+    <div id="confirmMessage"></div>
+
+    <!---HTML buttons to confirm purchase or to cancel purchase-->
+
+    <button type ="button" class ="button" onclick="confirmPurchase()">Confirm Purchase</button> &nbsp;&nbsp;
+    <button type ="button" class ="button" onclick="cancelPurchase()">Cancel Purchase</button>
+    </fieldset>
+
+    <!--javascript code to make AJAX requests for customer purchase--->
+    
+    <script>
+
+    let loginStatus = sessionStorage.getItem("loginStatus")
+    
+    if(loginStatus === "false" || loginStatus == null)
+    {
+        window.location.href = "login.html"
+    }
+
+    function deleteSession() 
+    {
+        sessionStorage.setItem("loginStatus","false")
+    }
+
+    // Checking if the user is logged in
+    if (sessionStorage.getItem("loginStatus") === "true") {
+    // Pushing a new history state to prevent the default back button action
+    history.pushState(null, null, window.location.href);
+
+    // Adding event listener for back button (popstate event)
+    window.addEventListener('popstate', function (event) {
+        if(event.state === null){
+        // When back button is pressed, navigating to another page
+        window.location.href = "logout.php"; // Specify the page to navigate to
+        }
+    });
+
+    }
+
+        // Function to load the available items catalog using AJAX
+        function loadCatalog() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("catalog").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "buying.php", true); 
+            xhttp.send();
+            
+        }
+
+        // Function to add an item to the shopping cart
+        function addToCart(itemNumber) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    // Refreshing the shopping cart after adding the item
+                    loadCatalog();
+                    loadCart();
+                }
+            };
+            xhttp.open("POST", "addToCart.php", true); // Adding item to cart using addToCart.php
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("itemNumber=" + itemNumber);
+        }
+
+        function removeFromCart(itemnumber){
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readystate === 4 && this.status === 200) {
+                     // Refreshing the shopping cart after removing the item
+                     loadCatalog();
+                     loadCart();
+                }
+            };
+            xhttp.open("POST","removeFromCart.php",true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("itemNumber=" + itemnumber);
+        }
+
+        // Function to load the shopping cart contents using AJAX
+        function loadCart() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById("cart").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "cart.php", true); 
+            xhttp.send();
+        }
+
+        // Function to confirm the purchase
+        function confirmPurchase() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('confirmMessage').innerHTML = this.responseText;
+                    loadCatalog(); // Refresh the catalog
+                    loadCart(); // Clear the cart
+                }
+            };
+            xhttp.open("POST", "confirmPurchase.php", true); // Confirm purchase in confirmPurchase.php
+            xhttp.send();
+        }
+
+        // Function to cancel the purchase
+        function cancelPurchase() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('confirmMessage').innerHTML = this.responseText;
+                    loadCatalog(); // Refresh the catalog
+                    loadCart(); // Clear the cart
+                }
+            };
+            xhttp.open("POST", "cancelPurchase.php", true); // Cancel purchase in cancelPurchase.php
+            xhttp.send();
+        }
+
+        // Initial load of catalog and cart
+        loadCatalog();
+        loadCart();
+
+        // Refresh catalog every 3 seconds
+        setInterval(loadCatalog, 3000);
+        
+        setInterval(loadCart,1000);
+
+    </script>
+</body>
+</html>
