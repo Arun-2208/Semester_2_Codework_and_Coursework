@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN� "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>part-2</title>
+  <style type="text/css">
+      .ab {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: small;
+	background-color: #CCFFCC;
+	padding: 5px;
+	height: 100px;
+	width: 350px;
+	border: 1px solid black;
+    border-collapse: collapse;
+
+    }
+  </style>
+  
+  <script type="text/javascript">
+    function addressBookItem (fname, lname, email) {
+        this.fname= fname;
+        this.lname = lname; 
+        this.email = email;
+    }
+	
+	addressBookItem.prototype.write = function() {
+       
+       
+        let adrbook = `<tr><td>${this.fname}</td><td>${this.lname}</td><td>${this.email}</td></tr>`;
+
+        document.write(adrbook);
+    }
+	
+</script>
+</head>
+<body> 
+    <table class="ab" border="1">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>email</th>
+        </tr>
+    <script type="text/javascript">
+        var aB1 = new addressBookItem('Roger', 'Williams', 'rwilliams@gmail.com');
+        var aB2 = new addressBookItem ('Rose', 'Schultz', 'rose_s@earthlink.net');
+        aB1.write();
+        aB2.write();
+        
+    </script>
+    </table>
+</body>
+</html>
